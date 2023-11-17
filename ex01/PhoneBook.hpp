@@ -6,7 +6,7 @@
 /*   By: majrou <majrou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 19:52:14 by majrou            #+#    #+#             */
-/*   Updated: 2023/11/13 19:02:10 by majrou           ###   ########.fr       */
+/*   Updated: 2023/11/17 15:56:52 by majrou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 
 #include <iostream>
 #include "Contact.hpp"
+#include <iomanip>
 
 class PhoneBook {
-	private:
-		Contact contacts[8];
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void addcontact(Contact con);
-
+private:
+	Contact contacts[8];
+	int index;
+public:
+	PhoneBook();
+	~PhoneBook();
+	void addContact(const Contact& con);
+	void displayContact();
+	void searchContact(int contactIndex);
+	void inputContact();
 };
 
 #endif

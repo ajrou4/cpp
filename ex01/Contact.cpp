@@ -6,7 +6,7 @@
 /*   By: majrou <majrou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 01:02:34 by majrou            #+#    #+#             */
-/*   Updated: 2023/11/13 17:52:58 by majrou           ###   ########.fr       */
+/*   Updated: 2023/11/15 05:44:13 by majrou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void Contact:: setnickname(std:: string val){
 void Contact:: setphonenumber(std:: string val){
 	phone_number = val;
 }
-void Contact :: setarkestsecret(std :: string val){
+void Contact :: setdarkestsecret(std :: string val){
 	darkest_secret = val;
 }
 
