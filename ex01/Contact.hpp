@@ -6,7 +6,7 @@
 /*   By: majrou <majrou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:47:36 by majrou            #+#    #+#             */
-/*   Updated: 2023/11/17 15:56:49 by majrou           ###   ########.fr       */
+/*   Updated: 2023/11/18 00:59:51 by majrou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ public:
 	void setnickname(std::string val);
 	void setphonenumber(std::string val);
 	void setdarkestsecret(std::string val);
+	void displayContactInfo();
 };
 #endif
