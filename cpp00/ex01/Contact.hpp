@@ -32,11 +32,6 @@ public:
 	std::string getphonenumber();
 	std::string getdarkestsecret();
 	int setcontact();
-	// void setfirstname(std::string val);
-	// void setlastname(std::string val);
-	// void setnickname(std::string val);
-	// void setphonenumber(std::string val);
-	// void setdarkestsecret(std::string val);
 	void displayContactInfo();
 };
 #endif

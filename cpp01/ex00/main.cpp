@@ -1,7 +1,16 @@
 #include "Zombie.hpp"
 #include <iostream>
+#include <cstdlib>
 
 int main(){
-	Zombie  Zombie("majrou");
-	Zombie.announce();
+	Zombie  sZombie("majrou");
+	sZombie.announce();
+
+	Zombie* hZombie = newZombie("KhderKrawita");
+	hZombie->announce();
+
+	randomChump("jamica");
+	delete hZombie;
+	return 0;
 }
+

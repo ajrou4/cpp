@@ -12,6 +12,6 @@ Zombie :: ~Zombie(void){
 }
 
 void Zombie :: announce(void){
-	static std::string name;
+	// static std::string name;
 	std :: cout << name << ": BraiiiiiiinnnzzzZ..."<< std:: endl;
 }

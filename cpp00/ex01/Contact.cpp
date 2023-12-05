@@ -15,12 +15,10 @@
 
 Contact::Contact(void)
 {
-	// std:: cout << "constructor called" << std::endl;
 }
 
 Contact::~Contact(void)
 {
-	// std:: cout << "destructor called" << std::endl;
 }
 
 std::string Contact::getfirstname() {
@@ -38,21 +36,6 @@ std::string Contact::getphonenumber() {
 std::string Contact::getdarkestsecret() {
 	return darkest_secret;
 }
-// void Contact:: setfirstname(std:: string val){
-// 	first_name = val;
-// }
-// void Contact:: setlastname(std:: string val){
-// 	last_name = val;
-// }
-// void Contact:: setnickname(std:: string val){
-// 	nickname = val;
-// }
-// void Contact:: setphonenumber(std:: string val){
-// 	phone_number = val;
-// }
-// void Contact :: setdarkestsecret(std :: string val){
-// 	darkest_secret = val;
-// }
 
 int Contact::setcontact(){
 

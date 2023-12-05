@@ -1,22 +1,23 @@
 NAME = main
-SRC  = main.cpp HumanB.cpp HumanA.cpp Weapon.cpp
+SRC  = main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC =  c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
+
 all:$(NAME)
 
 
 %.o:%.cpp
-			$(CC) $(FLAGS) -c $< -o $@ 
+			$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-				$(CC) $(FLAGS) $(OBJ)  -o $(NAME)
+				$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 				@echo "Compiling done."
 
 clean :
 		@rm -rf $(OBJ)
 
 fclean : clean
-		@rm -f $(NAME)
+		@rm -f $(NAME) *.replace
 
 re : fclean all

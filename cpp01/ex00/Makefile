@@ -1,7 +1,7 @@
 NAME = main
 SRC = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 OBJ = $(SRC:.cpp=.o)
-CC = g++
+CC = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
 all:$(NAME)
@@ -11,7 +11,7 @@ all:$(NAME)
 				$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-				$(CC) $(OBJ) -o $(NAME)
+				$(CC) $(FLAGS)  $(OBJ) -o $(NAME)
 				@echo "Compiling done."
 
 clean :
