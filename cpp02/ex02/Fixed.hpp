@@ -38,7 +38,7 @@ class Fixed
             static const Fixed &min(const Fixed &a, const Fixed &b);
             static Fixed &max(Fixed &a, Fixed &b);
             static const Fixed &max(const Fixed &a, const Fixed &b);
-            friend std::ostream& operator << (std:: ostream &out ,const Fixed &Fixed);
 };
+           std::ostream& operator << (std:: ostream &out ,const Fixed &Fixed);
 
 #endif

@@ -1,29 +1,23 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() : FixValue(0) {
-    std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int intValue) : FixValue(intValue << FractValue){
-    std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float floatValue) : FixValue ( roundf(floatValue * (1 << FractValue))){
-    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &src) : FixValue(src.FixValue) {
-    std::cout << "Copy constructor called" << std::endl;
 }
 Fixed &Fixed::operator=(const Fixed &src) {
     if (this != &src) {
         this->FixValue = src.FixValue;
-        std::cout << "Copy assignment operator called" << std::endl;
     }
     return *this;
 }
 Fixed::~Fixed() {
-    std::cout << "Destructor called" << std::endl;
 }
 
 void Fixed::setRawBits(int const raw) {
@@ -97,25 +91,25 @@ Fixed Fixed::operator--(int) {
     operator--();
     return tmp;
 }
+Fixed &Fixed::min(Fixed &a, Fixed &b){
+    if(a < b)
+        return a;
+    else 
+        return b;
+}
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b){
+    if(a < b)
+        return a;
+    else 
+        return b;
+}
 Fixed &Fixed::max(Fixed &a, Fixed &b){
     if(a > b)
         return a;
     else 
         return b;
 }
-const Fixed &Fixed :: &min(const Fixed &a, const Fixed &b){
-    if(a > b)
-        return a;
-    else 
-        return b;
-}
-Fixed &Fixed::max(Fixed &a, Fixed &b){
-    if(a > b)
-        return a;
-    else 
-        return b;
-}
-const Fixed &Fixed :: &max (const Fixed &a, const Fixed &b){
+const Fixed &Fixed ::max(const Fixed &a, const Fixed &b){
     if(a > b)
         return a;
     else 

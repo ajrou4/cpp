@@ -21,7 +21,7 @@ public:
     void setRawBits(int const raw);
 	int toInt(void) const;  
 	float toFloat(void) const;
-    friend std::ostream& operator << (std:: ostream &out ,const Fixed &Fixed);
 };
+    std::ostream& operator << (std:: ostream &out ,const Fixed &Fixed);
 
 #endif
