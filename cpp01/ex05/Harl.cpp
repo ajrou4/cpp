@@ -25,18 +25,14 @@ void Harl::error(){
 
 void Harl::complain( std::string level )
 {
-    std::string arry[]= {"debug", "info", "warning", "error"};
+    std::string arry[]= {"error", "info", "warning", "debug"};
     f fPtr[4]= {&Harl::debug, &Harl::info, &Harl::warning,&Harl::error};
     for(int i = 0; i < 4; i++)
     {
         if(arry[i] == level){
             (this->*fPtr[i])();
-            break;
-        }
-
-        else {
-            std:: cout << "Bad Harl :()" << std::endl;
-            break;
+            return ;
         }
     }
+    std:: cout << "Bad Harl :()" << std::endl;
 }
