@@ -8,6 +8,7 @@ ScavTrap :: ScavTrap(const std::string name): ClapTrap(name){
 }
 ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src){
     std::cout<< "copy constructor called" <<std::endl;
+    *this = src;
 }
 ScavTrap &ScavTrap::operator=(const ScavTrap &src){
     name = src.name;
@@ -23,11 +24,17 @@ void ScavTrap::guardGate(){
     std::cout<< "ScavTrap "<< name << " is now in Gate keeper mode" << std::endl;
 }
  void ScavTrap::attack(const std::string& target){
-    if(EnergyPoints > 0)
+    if (HitPoints == 0)
     {
-        std::cout << "ScavTrap"<< name << "attcks  target!"<< target<< std::endl;
+        std::cout << this->name << " cannot attack because he died" << std::endl;
+        return;
+    }
+    if(EnergyPoints > 0){
+        std::cout << "ClapTrap "<< name <<  " attacks " << target <<", causing " << AttackDamage <<  " points of damage!"<<std::endl;
         EnergyPoints--;
     }
-    else
-        std::cout<<"ScabvTrap"<< name << "cannot attack because his e energy is left!"<<std::endl;
+    else{
+        std::cout<< "ClapTrap "<< name <<" cannot attack because Energy Points : " << EnergyPoints << " is left" << std::endl;
+    }
  }
+
