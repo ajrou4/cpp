@@ -1,5 +1,5 @@
 NAME = main
-SRC  = Bureaucrat.cpp main.cpp
+SRC  = Bureaucrat.cpp main.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
 CC =  c++
 HEADER = Bureaucrat.hpp

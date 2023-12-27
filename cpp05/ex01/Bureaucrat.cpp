@@ -14,8 +14,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src){
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src){
     if(this != &src)
     {
-        this->name = src.name;
-        this->grade = src.grade;
+        this->getName() = src.name;
     }
     return *this;
 }
@@ -24,11 +23,11 @@ Bureaucrat::~Bureaucrat(){
      std::cout << "Bureaucrat  say bye!" << std::endl;
 }
 
-std::string Bureaucrat::getName()const{
+std::string Bureaucrat::getName(){
     return name;
 }
 
-int Bureaucrat::getGrade()const{
+int Bureaucrat::getGrade(){
     return grade;
 }
 std::string Bureaucrat::GradeTooHighException::what(){
@@ -40,14 +39,10 @@ std::string Bureaucrat::GradeTooLowException::what(){
 void Bureaucrat::incrementGrade(){
     grade--;
     if(grade < 1)
-        throw GradeTooHighException()
+        throw GradeTooHighException();
 } 
 void Bureaucrat::decrementGrade(){
     grade++;
     if(grade > 150)
         throw GradeTooLowException();
 }
-std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat){
-    out << bureaucrat.getName() <<", bureaucrat grade" << bureaucrat.getGrade()<< std::endl;
-}
- 
