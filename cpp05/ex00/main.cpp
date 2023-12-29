@@ -14,7 +14,7 @@ int main()
     }
     catch(std::exception &e)
     {
-        std::cout << G.getName() <<e.what()<< std::endl;
+        std::cout<<e.what()<< std::endl;
     }
     return 0;
 }
