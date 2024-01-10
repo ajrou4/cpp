@@ -21,12 +21,12 @@ class Bureaucrat
 	class GradeTooHighException : public std::exception 
 	{
 		public:
-				virtual std::string what();
+				virtual  std::string what();
 	};
 	class GradeTooLowException : public std::exception 
 	{
 		public:
-				virtual std::string what();
+				virtual  std::string what();
 	};
 };
 
