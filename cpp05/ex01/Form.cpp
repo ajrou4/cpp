@@ -14,20 +14,26 @@ Form &Form::operator=(const Form &src){
     }
     return *this;
 }
-void Form::GradeTooHighException(){
-
+std::string Form::GradeTooHighException()::what(){
+    return ("is Too High");
 }
-void Form::GradeTooLowException(){
-
+std::string  Form::GradeTooLowException():: what(){
+    return ("is Too Low");
+}
+std::string Form:: getName(){
+    return name;
 }
 void Form::beSigned(){
     if(signedForm == false){
-        
+        std::cout << getName() << "couldn’t sign <" << signForm()<<"because "<< getGrade()<< " then gerade for sign " <<std::endl;
     }
     else
     {
-
+        std::cout << getName()<< "singed" << singForm()<< std::endl;
     }
+}
+int Form::getGrade()const{
+
 }
 void Form::signForm(){
     
@@ -35,7 +41,7 @@ void Form::signForm(){
 Form::~Form(){
 
 }
-std::ostream& operator<<(std::ostream &out, const Form &Form){
-    out << Form. <<", bureaucrat grade" << Form_.getGrade()<< std::endl;
+std::ostream& operator<<(std::ostream &out, const Form &_Form){
+    out << _Form.getName()<< ", bureaucrat grade" << _Form.getGrade()<< std::endl;
     return out;
 }

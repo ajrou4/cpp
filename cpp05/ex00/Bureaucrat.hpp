@@ -18,15 +18,16 @@ class Bureaucrat
 			int getGrade()const;
 			void incrementGrade();
 			void decrementGrade();
+			// virtual const char* what() const noexcept;
 	class GradeTooHighException : public std::exception 
 	{
 		public:
-				virtual  std::string what();
+				virtual  const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception 
 	{
 		public:
-				virtual  std::string what();
+				virtual  const char* what() const throw();
 	};
 };
 
