@@ -6,7 +6,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade):name(name), grade(grade){
     std::cout<<name << " Say hello!" << std::endl;
 }
 
- 
 Bureaucrat::Bureaucrat(const Bureaucrat &src){
     *this = src;
 }
