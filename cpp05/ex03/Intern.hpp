@@ -3,8 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include"PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <exception>
 #include "AForm.hpp"
+
 class AForm;
 class Intern {
     public:
@@ -18,10 +22,9 @@ class Intern {
         public:
                 virtual const char* what() const throw();
     };
-    private:
-            AForm* creatShrubberyCreationForm(std::string target);
-            AForm* creatRobotomyRequestForm(std::string target);
-            AForm* creatPresidentialPardonForm(std::string target);
+    AForm* creatShrubberyCreationForm(std::string target);
+    AForm* creatRobotomyRequestForm(std::string target);
+    AForm* creatPresidentialPardonForm(std::string target);
 
 };
 

@@ -1,28 +1,22 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include"PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-int main(){
+int main()
+{
+    Intern someRandomIntern;
+    AForm* rrf = nullptr;
     try
     {
-        Bureaucrat ajrou("ajrou", 25);
-        RobotomyRequestForm Nihad("ajrou");
-        RobotomyRequestForm Naruto("ajrou");
-        PresidentialPardonForm Sasuki("ajrou");
-        std::cout <<"form sing is : " << std::endl;
-        Nihad.beSigned(ajrou);
-        Naruto.beSigned(ajrou);
-        Sasuki.beSigned(ajrou);
-        std::cout <<" form execute is : " << std::endl;
-        Nihad.execute(ajrou);
-        Naruto.execute(ajrou);
-        Sasuki.execute(ajrou);
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     }
     catch(std::exception &e)
     {
-        std::cout <<"Error " << e.what() << std::endl;
+            std::cout <<"Error: " << e.what() << std::endl;
+            delete rrf;
     }
     return 0;
 }
