@@ -1,8 +1,8 @@
-NAME = main
-SRC  =Data.cpp Serialize main.cpp
+NAME = Serialize
+SRC  =Data.cpp Serialize.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC =  c++
-HEADER = Bureaucrat.hpp
+HEADER = Data.hpp Serialize.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98 
 all:$(NAME)
 

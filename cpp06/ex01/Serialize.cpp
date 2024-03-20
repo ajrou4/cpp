@@ -2,8 +2,11 @@
 
 Serialize::Serialize(){}
 Serialize::Serialize(const Serialize &src){
+    (void)src;
 }
 Serialize &Serialize::operator=(const Serialize &src){
+    (void)src;
+    return *this;
 }
 Serialize::~Serialize(){}
 
