@@ -1,8 +1,8 @@
-NAME = whatever
+NAME = Array
 SRC  = main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC =  c++
-HEADER = whatever.hpp
+HEADER = Array.hpp
 FLAGS = -Wall -Wextra -Werror -std=c++98 
 all:$(NAME)
 

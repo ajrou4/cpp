@@ -1,26 +1,24 @@
 #include <iostream>
-#include <string>
-#include "iter.hpp"
+#include "iter.hpp" // Include the header file
 
 template <typename T>
-
-void coutArray(&T arr)
-{
-	std::cout << arr << std::endl;
+void coutArray(T& arr){
+    std::cout << arr << std::endl;
 }
 
 int main()
 {
-	int array[] = {2, 3, 4, 7, 9, 1};
-	char cub[] = {'m','a','j','r','o','u'};
-	
-	double elem[] = {1.1,3.7,8.0,5.6,2.7};
-	
-	std::cout << "Element array is :"<<std::endl;
-	iter(arry, 6, coutArray<int>);
-	std::cout << "Element array is :"<<std::endl;
-	iter(cub, 6, coutArray<char>);
+    int intArray[] = {2, 3, 4, 7, 9, 1};
+    char charArray[] = {'m','a','j','r','o','u'};
+    double doubleArray[] = {1.1,3.7,8.8,5.6,2.7};
 
-	std::cout << "Element array is :"<<std::endl;
-	iter(elem, 5, coutArray<double>); 
+    std::cout << "This is int Array : "<<std::endl;
+    iter(intArray, 6, coutArray<int>);
+
+    std::cout << "This is char Array : "<<std::endl;
+    iter(charArray, 6, coutArray<char>);
+
+    std::cout << "This is double Array : "<<std::endl;
+    iter(doubleArray, 5, coutArray<double>);
+    return 0;
 }
