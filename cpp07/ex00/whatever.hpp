@@ -6,7 +6,7 @@ template <typename T>
 class whatever
 {   
     public:
-        whatever();
+        whatever(){}
         whatever(const whatever &src);
         whatever& operator=(const whatever &src);
         ~whatever();
