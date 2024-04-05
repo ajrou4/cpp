@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
 template <typename T>
 class Array
@@ -19,7 +20,7 @@ public:
     Array(const Array &src){
         _size = src._size;
         ptr = new T[_size];
-        for(int i =0; i < _size; i++)
+        for(unsigned int i =0; i < _size; i++)
             ptr[i] = src.ptr[i];
     }
 
@@ -29,17 +30,24 @@ public:
             delete[] ptr;
             _size = src._size;
             ptr = new T[_size];
-            for(int i =0; i < _size; i++)
-            ptr[i] = src.ptr[i];
+            for(unsigned int i =0; i < _size; i++)
+                ptr[i] = src.ptr[i];
         }
         return *this;
     }
     ~Array(){
-        delete[];
+        delete[] ptr;
     }
-    T& operator[](std::size_t index){}
-    const T& operator[](std::size_t index) const;{}
-    std::size_t size() const{}
+    T& operator[](unsigned int index){
+        if(_size <= index)
+        {
+            throw std::out_of_range ("out of range");
+        }
+        return ptr[index];
+    }
+    unsigned int size() const{
+        return _size;
+    }
 };
 
 
