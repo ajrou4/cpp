@@ -2,6 +2,7 @@
 
 Bureaucrat::Bureaucrat(){
 }
+
 Bureaucrat::Bureaucrat(std::string name, int grade):name(name), grade(grade){
     std::cout<<name << " Say hello!" << std::endl;
 }
@@ -49,7 +50,7 @@ void Bureaucrat::decrementGrade(){
 void Bureaucrat::signForm(Form &f){  
     try{
         f.beSigned(*this);
-        std::cout << *this << "signed form" << f.getName() << std::endl;
+        std::cout << *this << "signed form " << f.getName() << std::endl;
     }
     catch(std::exception &e){
         std::cout << getName() << " couldn’t sign " << f.getName() << " because" << e.what() << std::endl;  
@@ -57,6 +58,6 @@ void Bureaucrat::signForm(Form &f){
 }
 std::ostream& operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-    out << bureaucrat.getName() <<", bureaucrat grade" << bureaucrat.getGrade()<< std::endl;
+    out << bureaucrat.getName() <<", bureaucrat grade " << bureaucrat.getGrade()<< std::endl;
     return out;
 }

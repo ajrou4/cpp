@@ -5,10 +5,10 @@ int main()
 {
     try
     {
-        Bureaucrat gradian("majrou", 60);
-        Form f("form", 50, 70);
+        Bureaucrat gradian("majrou", 50);
+        Form f("KING", 50, 70);
         gradian.signForm(f);
-        std::cout<< "form: " << f << std::endl; 
+        std::cout<< f << std::endl; 
     }
     catch(std::exception &e)
     {

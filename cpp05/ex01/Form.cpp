@@ -43,14 +43,14 @@ const char *Form::GradeTooLowException::what()const throw(){
 }
 
 Form::~Form(){
-    std::cout<< getName() <<" Say bay"<< std::endl;
+    std::cout<< getName() <<" Say bye"<< std::endl;
 }
 std::ostream& operator<<(std::ostream &os, Form &form){
-    os << form.getName() << "Singed: ";
+    os << form.getName() << " Singed: ";
     if(form.isSignedstatus())
         os << "Yes";
     else
         os  << "No";
-    os << ", grade to sing "<<  form.getGradeToSing()<< ", grade to execut "<< form.getGradeToExecute()<< std::endl;
+    os << ", grade to sing "<<  form.getGradeToSing()<< ", grade to execut "<< form.getGradeToExecute();
     return os;
 } 

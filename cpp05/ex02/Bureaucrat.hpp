@@ -5,8 +5,7 @@
 #include <exception> 
 #include "AForm.hpp"
 class AForm;
-
-class Bureaucrat
+class  Bureaucrat
 {
     private:
             std::string const name;

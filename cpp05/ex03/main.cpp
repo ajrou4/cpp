@@ -8,7 +8,7 @@
 int main()
 {
     Intern someRandomIntern;
-    AForm* rrf = nullptr;
+    AForm* rrf = NULL;
     try
     {
         rrf = someRandomIntern.makeForm("robotomy request", "Bender");

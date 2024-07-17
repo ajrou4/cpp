@@ -47,6 +47,6 @@ AForm* Intern::makeForm(std::string formName, std::string formTarget){
             default:
                 throw InvalidFormNameException();
         }
-        return nullptr;
+        return NULL;
 }
 

@@ -16,7 +16,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 RobotomyRequestForm::~RobotomyRequestForm(){
 }
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const{
-    if(executor.getGrade() < getGradeToExecute())
+    if(executor.getGrade() > getGradeToExecute())
         throw GradeTooLowException();
     if(!isSignedstatus())
         throw GradeTooLowException();

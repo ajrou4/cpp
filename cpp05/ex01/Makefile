@@ -1,4 +1,4 @@
-NAME = main
+NAME = Form
 SRC  = Bureaucrat.cpp main.cpp Form.cpp
 OBJ = $(SRC:.cpp=.o)
 CC =  c++

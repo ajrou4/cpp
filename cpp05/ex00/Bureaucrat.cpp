@@ -2,11 +2,10 @@
 
 Bureaucrat::Bureaucrat(){
 }
-Bureaucrat::Bureaucrat(std::string name, int grade):name(name), grade(grade){
-    std::cout<<name << " say hello!" << std::endl;
+Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name), grade(grade) {
+    std::cout << name << " says hello!" << std::endl;
 }
 
- 
 Bureaucrat::Bureaucrat(const Bureaucrat &src){
     *this = src;
 }

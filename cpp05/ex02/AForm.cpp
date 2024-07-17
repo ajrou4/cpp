@@ -13,8 +13,10 @@ AForm &AForm::operator=(const AForm &src){
     return *this;
 }
 void AForm::beSigned(const Bureaucrat &b){
-    if(b.getGrade() <= gradeRequiredToSing)
+    if(b.getGrade() <= gradeRequiredToSing){
         isSigned = true;
+        std::cout << b.getName() << " signs " << name << std::endl;
+    }
     else
         throw GradeTooLowException();
 }

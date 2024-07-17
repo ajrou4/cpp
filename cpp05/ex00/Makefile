@@ -1,4 +1,4 @@
-NAME = main
+NAME = Bureaucrat
 SRC  = Bureaucrat.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 CC =  c++

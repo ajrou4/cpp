@@ -7,22 +7,22 @@
 int main(){
     try
     {
-        Bureaucrat ajrou("ajrou", 25);
+        Bureaucrat ajrou("ajrou", 145);
         RobotomyRequestForm Nihad("ajrou");
-        RobotomyRequestForm Naruto("ajrou");
-        PresidentialPardonForm Sasuki("ajrou");
-        std::cout <<"form sing is : " << std::endl;
+        ShrubberyCreationForm Naruto("stack");
+        PresidentialPardonForm Sasuki("vector");
+        std::cout <<"Form sing is : "<< std::endl;
         Nihad.beSigned(ajrou);
         Naruto.beSigned(ajrou);
         Sasuki.beSigned(ajrou);
-        std::cout <<" form execute is : " << std::endl;
+        std::cout <<"Form execute is : ";
         Nihad.execute(ajrou);
         Naruto.execute(ajrou);
         Sasuki.execute(ajrou);
     }
     catch(std::exception &e)
     {
-        std::cout <<"Error " << e.what() << std::endl;
+        std::cout <<"Error: " << e.what() << std::endl;
     }
     return 0;
 }
