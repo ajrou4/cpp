@@ -16,6 +16,7 @@ class RPN {
         RPN &operator=(const RPN &obj);
         ~RPN();
         void processLine(const std::string &line);
+        void checkNUmber(const std::string &token);
         void evaluate();
         void clear();
     private:
@@ -23,6 +24,9 @@ class RPN {
         void processToken(const std::string &token) ;
         void processOperator(const std::string &op) ;
         bool isOperator(const std::string &op) const;
+        bool is_single_digit(const std::string& str);
+
+
 };
 
 

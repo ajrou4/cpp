@@ -47,25 +47,40 @@ double BitcoinExchange::getExchangeRate(const std::string &date) const {
     throw std::runtime_error("Error: no available exchange rate for the date.");
 }
 
+bool BitcoinExchange::isValidDate(const std::string &date) const {
+    std::istringstream iss(date);
+    int year, month, day;
+    char dash1, dash2;
+    if (iss >> year >> dash1 >> month >> dash2 >> day && dash1 == '-' && dash2 == '-') {
+        if (year >= 2009 && year <= 2022 && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void BitcoinExchange::processLine(const std::string &line) const {
     std::istringstream iss(line);
     std::string date, valueStr;
     if (std::getline(iss, date, '|') && std::getline(iss, valueStr)) {
         date.erase(date.find_last_not_of(" \n\r\t") + 1);
         valueStr.erase(0, valueStr.find_first_not_of(" \n\r\t"));
+        if (!isValidDate(date)) {
+            std::cerr << "Error: invalid date format: " << date << std::endl;
+            return;
+        }
         try {
             double value = std::stod(valueStr);
-            if (value < 0 || value > 100000) {
+            if (value < 0 || value > 1000) {
                 throw std::out_of_range("Error: value out of range.");
             }
             double rate = getExchangeRate(date);
             std::cout << date << " : " << value << " = " << value * rate << std::endl;
-        } catch (const std::exception &e) {
-            std::cerr << "Error: " << e.what() << std::endl;
+        } catch ( std::exception &e) {
+            std::cerr << "Error: " << e.what() << " for line: " << line << std::endl;
         }
-    } 
-    else {
-        std::cerr << "Error: bad input :" << line << std::endl;
+    } else {
+        std::cerr << "Error: bad input: " << line << std::endl;
     }
 }
 
@@ -92,4 +107,3 @@ void BitcoinExchange::removeExchangeRate(const std::string &date) {
 void BitcoinExchange::clearExchangeRates() {
     exchangeRates.clear();
 }
- 

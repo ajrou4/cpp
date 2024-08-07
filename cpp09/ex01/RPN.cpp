@@ -21,11 +21,27 @@ void RPN::processLine(const std::string &line)  {
         processToken(token);
     }
 }
+void RPN::checkNUmber(const std::string &token){
+    for (unsigned long i = 0; i < token.length(); i++) {
+        if (!isdigit(token[i]) && token[i] != '.' && token[i] != '-') {
+            throw std::invalid_argument("is not number: " + token);
+        }
+    }
+}
+
+bool RPN::is_single_digit(const std::string& str){
+    return str.size() == 1 && isdigit(str[0]);
+}
+
 
 void RPN::processToken(const std::string &token)  {
     if (isOperator(token)) {
         processOperator(token);
     } else {
+        checkNUmber(token);
+        if(!is_single_digit(token)){
+            throw std::invalid_argument("This's not single digit : " + token);
+        }
         double value;
         std::istringstream iss(token);
         if (iss >> value) {
