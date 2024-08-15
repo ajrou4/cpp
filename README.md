@@ -1,6 +1,5 @@
-##Contents
-
-#The C++ Pool covers various topics through a series of projects and exercises. Below is an outline of what you'll be working on:
+Contents:
+The C++ Pool covers various topics through a series of projects and exercises. Below is an outline of what you'll be working on:
 
     Basics of C++
         Syntax and structure
@@ -33,8 +32,8 @@
         Debugging and profiling tools
         Adhering to C++ coding standards
 
-#Getting Started
-#Prerequisites
+Getting Started
+Prerequisites
 
 Before starting the C++ Pool, you should be comfortable with basic programming concepts. Experience with another programming language, such as C, is beneficial but not required.
 Environment Setup
