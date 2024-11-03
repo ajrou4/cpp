@@ -11,10 +11,9 @@ template<typename T>
 int easyfind(T& par, int val)
 {
    typename T::iterator it;
-   for(it = par.begin() ; it!= par.end(); it++){
-        if(*it == val)
-            return val;
-   }
+   it = std::find ( par.begin() , par.end(), val);
+   if(it != par.end())
+	   return val;
    throw std::runtime_error("Value not found!");
 }
 

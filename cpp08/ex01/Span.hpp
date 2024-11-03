@@ -11,7 +11,7 @@ class Span
 {
     private:
         unsigned int maxSize;
-        std::vector<int>element;
+        std::vector<int> element;
     public:
         Span():maxSize(0){}
         Span(unsigned int N):maxSize(N){}
@@ -29,6 +29,12 @@ class Span
                 throw std::runtime_error("Span is full");
             element.push_back(N);
         }
+		void addNumber(const std::vector<int>& numbers)
+        {
+			if(element.size() + numbers.size() > maxSize)
+			   throw std::runtime_error("Span is full");
+			element.insert(element.end(), numbers.begin(), numbers.end());	
+		}
         int shortestSpan()
         {
             if(element.size() <= 1)
